@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Infinite Riser</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <h1>Infinite Riser <span class="byline">by <a class="byline-link" href="https://recu3125.com" target="_blank" rel="noreferrer">recu3125</a></span></h1>
+      <p class="sub">
+        Upload an audio file and make it endlessly rise.
+      </p>
+    </header>
+
+    <section class="card">
+      <div class="field">
+        <label for="file">Audio File</label>
+        <input id="file" type="file" accept="audio/*" />
+      </div>
+
+      <div class="field">
+        <label for="speed">Rise Speed (seconds per octave)</label>
+        <div class="slider-row">
+          <input id="speed" type="range" min="4" max="30" step="0.5" value="21" />
+          <span id="speedV" class="slider-value">13.0s</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="run" class="primary">Start Convert</button>
+        <button id="cancel" class="ghost" disabled>Cancel</button>
+      </div>
+
+      <div class="progress">
+        <progress id="prog" value="0" max="1"></progress>
+        <span id="pct">0%</span>
+      </div>
+
+      <div class="status">
+        <div>Status: <span id="stage">-</span></div>
+        <div>Elapsed: <span id="elapsed">00:00</span></div>
+        <div>ETA: <span id="eta">--:--</span></div>
+        <div>Speed: <span id="speedStat">-</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div id="out" class="output"></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
